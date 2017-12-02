@@ -10,7 +10,8 @@ const STATES = {
   waiting: 'WAITING',
   questionDisplayed: 'QUESTION_DISPLAYED',
   questionAnswered: 'QUESTION_ANSWERED',
-  awaitingURL: 'AWAITING_URL'
+  URLawaiting: 'URL_AWAITING',
+  URLsent: 'URL_SENT'
 };
 
 let bot = new Bot();
@@ -83,8 +84,10 @@ function onCommand(session, command) {
       );
       break;
     case 'addNewQuestion':
-      session.set('app_state', STATES.awaitingURL);
-      session.reply('Add a new question');
+      session.set('app_state', STATES.URLawaiting);
+      session.reply(`Post a news article you wish to be predicted using FakeSlam!`);
+      session.set('app_state', STATES.URLsent);
+      sendQuestion(session, `Mark it as fake or genuine.`);
       break;
   }
 }
