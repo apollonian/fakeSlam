@@ -10,9 +10,7 @@ const STATES = {
   waiting: 'WAITING',
   questionDisplayed: 'QUESTION_DISPLAYED',
   questionAnswered: 'QUESTION_ANSWERED',
-  URLawaiting: 'URL_AWAITING',
-  URLreceived: 'URL_RECEIVED',
-  URLsent: 'URL_SENT'
+  awaitingURL: 'AWAITING_URL'
 };
 
 let bot = new Bot();
@@ -54,19 +52,8 @@ function welcome(session) {
 function onMessage(session, message) {
   if (session.get('app_state') == STATES.awaitingURL) {
     // Get url from the user and send it to the DB
-    session.reply(
-      `We have recieved your link: ${
-        message.content.body
-      }\n\nFakeSlam! will circulate this among users, and will make you aware of the outcome as soon as possible. Thanks!`
-    );
-    session.set('app_state', STATES.URLreceived);
-    sendQuestion(session, message.content.body);
-    session.set('app_state'), STATES.waiting;
-  } else if (session.get('app_state') == STATES.waiting) {
-    handlePushNewQuestion(
-      session,
-      `Man develops a dating app exclusively for mechanical engineers; receives a million downloads in few hours\n\nhttp://www.fakingnews.firstpost.com/society/man-develops-dating-app-exclusively-mechanical-engineers-receives-700-traffic-first-week-24314`
-    );
+    console.log(message.content.body);
+    session.reply(message.content.body);
   } else {
     welcome(session);
   }
@@ -96,10 +83,8 @@ function onCommand(session, command) {
       );
       break;
     case 'addNewQuestion':
-      session.set('app_state', STATES.URLawaiting);
-      session.reply(`Post a news article you wish to be predicted using FakeSlam!`);
-      session.set('app_state', STATES.URLsent);
-      sendQuestion(session);
+      session.set('app_state', STATES.awaitingURL);
+      session.reply('Add a new question');
       break;
   }
 }
