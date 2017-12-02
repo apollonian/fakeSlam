@@ -1,16 +1,16 @@
 {
-  "name": "Toshi SOFA App",
-  "description": "Foundation for building a SOFA app for Toshi (Chat Bot / Web View)",
-  "repository": "https://github.com/toshiapp/toshi-sofa-app",
+  "name": "FakeSlam!",
+  "description": "A blockchain based fake news predictor bot!",
+  "repository": "https://github.com/apollonian11/fakeSlam",
   "env": {
     "TOKEN_APP_SEED": {
-      "description": "12 word secret backup phrase"
+      "description": "pice dog pony profit anger satisfy tongue regular police eagle armed wise"
     },
     "TOKEN_APP_USERNAME": {
-      "description": "Choose a username for your app: letters, numbers, and underscores only"
+      "description": "fakeslam"
     },
     "TOKEN_APP_NAME": {
-      "description": "Choose a display name - all characters allowed"
+      "description": "FakeSlam!"
     },
     "STAGE": {
       "description": "Stage of deployment: development (default) or production",
@@ -34,16 +34,18 @@
     }
   },
   "addons": [
-      {
-        "plan": "heroku-redis:hobby-dev"
-      },{
-        "plan": "heroku-postgresql:hobby-dev"
-      }
+    {
+      "plan": "heroku-redis:hobby-dev"
+    },
+    {
+      "plan": "heroku-postgresql:hobby-dev"
+    }
   ],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
-    },{
+    },
+    {
       "url": "heroku/gradle"
     }
   ]
