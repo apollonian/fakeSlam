@@ -60,4 +60,4 @@ parties. The trust is otherwise set up by a third party
 1. Clone this repo
 2. Run `docker-compose build` once
 3. `docker-compose up` to run the server
-4. Visit the Toshi Dev Client for Android, and search for `fakeslam` in the Favorites Tab.
+4. Visit the Toshi Dev Client for Android, and search for `fakeslambot` in the Favorites Tab.
