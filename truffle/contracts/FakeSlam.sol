@@ -1,4 +1,4 @@
-pragma solidity ^0.4.16;
+pragma solidity ^0.4.15;
 
 // FakeSlam! Contract v0.1.0;
 contract FakeSlam {
@@ -129,34 +129,34 @@ contract FakeSlam {
     }
 
     /** Returns the Fake Pool amount for a given article */
-    function getFakePoolAmount (uint _articleID) public constant returns (uint) {
-        return articles[_articleID].fakePool;
-    }
+    // function getFakePoolAmount (uint _articleID) public constant returns (uint) {
+    //     return articles[_articleID].fakePool;
+    // }
 
     /** Returns the Genuine Pool amount for a given article */
-    function getGenuinePoolAmount (uint _articleID) public constant returns (uint) {
-        return articles[_articleID].genuinePool;
-    }
+    // function getGenuinePoolAmount (uint _articleID) public constant returns (uint) {
+    //     return articles[_articleID].genuinePool;
+    // }
 
-    /** Returns the vote history of a user*/
-    function getVote() public constant returns (bool[]) {
-        return votes[msg.sender].isFake;
-    }
+    // /** Returns the vote history of a user*/
+    // function getVote() public constant returns (bool[]) {
+    //     return votes[msg.sender].isFake;
+    // }
 
-    /** Returns the backing amount history of a user*/
-    function getAmount() public constant returns (uint[]) {
-        return votes[msg.sender].amount;
-    }
+    // /** Returns the backing amount history of a user*/
+    // function getAmount() public constant returns (uint[]) {
+    //     return votes[msg.sender].amount;
+    // }
 
-    /** Returns the article voting history of a user*/
-    function getArticle() public constant returns (uint[]) {
-        return votes[msg.sender].articleID;
-    }
+    // /** Returns the article voting history of a user*/
+    // function getArticle() public constant returns (uint[]) {
+    //     return votes[msg.sender].articleID;
+    // }
 
-    /** Returns the won voters array*/
-    function getWonVoters(uint _articleID) public constant returns (address[]) {
-        return articles[_articleID].wonVoters;
-    }
+    // /** Returns the won voters array*/
+    // function getWonVoters(uint _articleID) public constant returns (address[]) {
+    //     return articles[_articleID].wonVoters;
+    // }
 
     /** Called by user, returns the amount won for a given article, 0 incase lost */
     function getWonAmount(uint _articleID) public constant returns (uint amount) {

@@ -1,6 +1,6 @@
 var HDWalletProvider = require('truffle-hdwallet-provider');
 
-var mnemonic = 'come eye busy museum magnet long venue cash trend kitchen voice ugly';
+var mnemonic = 'garment slide arrive explain ask parent limb taste popular chase make dismiss';
 
 module.exports = {
   networks: {
@@ -10,7 +10,10 @@ module.exports = {
       network_id: '*' // Match any network id
     },
     ropsten: {
-      provider: new HDWalletProvider(mnemonic, 'https://ropsten.infura.io/qC8vHEIJuuyDTTCKXf2m'),
+      provider: function() {
+        return new HDWalletProvider(mnemonic, 'https://ropsten.infura.io/qC8vHEIJuuyDTTCKXf2m');
+      },
+      gas: 4612388,
       network_id: 3
     }
   }
