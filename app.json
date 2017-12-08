@@ -1,0 +1,52 @@
+{
+  "name": "FakeSlam!",
+  "description": "A blockchain based fake news predictor bot!",
+  "repository": "https://github.com/apollonian11/fakeSlam",
+  "env": {
+    "TOKEN_APP_SEED": {
+      "description": "divide brush dwarf sweet dress keep egg chunk ocean file debris arm"
+    },
+    "TOKEN_APP_USERNAME": {
+      "description": "fakeslambot"
+    },
+    "TOKEN_APP_NAME": {
+      "description": "FakeSlam!"
+    },
+    "STAGE": {
+      "description": "Stage of deployment: development (default) or production",
+      "value": "development",
+      "required": true
+    },
+    "NODE_MODULES_CACHE": {
+      "description": "Enable the often-troublesome npm/yarn cache",
+      "value": "false",
+      "required": false
+    }
+  },
+  "formation": {
+    "headless-client": {
+      "quantity": 1,
+      "size": "free"
+    },
+    "bot": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-redis:hobby-dev"
+    },
+    {
+      "plan": "heroku-postgresql:hobby-dev"
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/gradle"
+    }
+  ]
+}
