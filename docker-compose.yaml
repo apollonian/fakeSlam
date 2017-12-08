@@ -6,7 +6,7 @@ services:
       - redis
       - postgres
     environment: &environment
-      - TOKEN_APP_SEED=spice dog pony profit anger satisfy tongue regular police eagle armed wise
+      - TOKEN_APP_SEED=divide brush dwarf sweet dress keep egg chunk ocean file debris arm
       - TOKEN_APP_USERNAME=fakeslambot
       - TOKEN_APP_NAME=FakeSlam!
       - TOKEN_APP_AVATAR=
